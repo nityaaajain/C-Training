@@ -13,7 +13,7 @@ int main() {
     scanf("%d", &pin);  
 
     if (pin == p) {
-        while (1) {   
+        while (2) {   
             printf("\n----- MINI ATM -----\n");
             printf("1. Check Balance\n");
             printf("2. Deposit Money\n");
