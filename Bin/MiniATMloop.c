@@ -33,6 +33,7 @@ int main() {
                     if (amount > 0) {
                         bal += amount;
                         printf("Rs.%.2f Deposited Successfully!\n", amount);
+                        printf("New Balance: Rs.%.2f\n", bal);
                     } else {
                         printf("Invalid amount!\n");
                     }
@@ -44,6 +45,7 @@ int main() {
                     if (amount > 0 && amount <= bal) {
                         bal -= amount;
                         printf("Rs.%.2f Withdrawn Successfully!\n", amount);
+                        printf("Remaining Balance: Rs.%.2f\n", bal);
                     } else if (amount > bal) {
                         printf("Insufficient Balance!\n");
                     } else {

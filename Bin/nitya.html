@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>University Chatbot</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Caveat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: "Kalam", cursive;
+      }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-12px); }
+      }
+      .float-animation { animation: float 3s ease-in-out infinite; }
+    </style>
+  </head>
+  <body class="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 relative overflow-hidden">
+
+    <!-- Subtle Grid Background -->
+    <div
+      class="absolute inset-0 opacity-[0.02]"
+      style="
+        background-image: linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+        background-size: 50px 50px;
+      "
+    ></div>
+
+    <!-- Header -->
+    <header class="relative z-10 px-6 py-8">
+      <nav class="max-w-7xl mx-auto flex justify-end items-center space-x-10 text-slate-700 font-semibold text-lg">
+        <a href="#" class="hover:text-blue-600 transition-colors duration-300">Home</a>
+        <a href="#" class="hover:text-blue-600 transition-colors duration-300">Features</a>
+        <a href="#" class="hover:text-blue-600 transition-colors duration-300">Support</a>
+        <a href="#" class="hover:text-blue-600 transition-colors duration-300">Contact</a>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="relative z-10 max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-start gap-12 min-h-[75vh]">
+
+      <!-- Left Content: Text + Buttons -->
+      <section class="lg:w-3/5 space-y-10 pt-6">
+        <h1 class="text-5xl lg:text-6xl font-bold text-slate-900 leading-tight tracking-tight">
+          University
+          <span class="block text-blue-600">Chatbot Assistant</span>
+        </h1>
+        <p class="text-xl text-slate-600 max-w-xl leading-relaxed">
+          Your intelligent academic companion. Get instant answers about courses, schedules,
+          assignments, and university services. Available 24/7 to support your academic journey.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-6">
+          <a
+            href="{% url 'student_login' %}"
+            class="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-lg font-semibold text-lg transition-transform duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+          >Student Login</a>
+          <a
+            href="{% url 'admin_login' %}"
+            class="bg-slate-800 hover:bg-slate-900 text-white px-10 py-4 rounded-lg font-semibold text-lg transition-transform duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+          >Admin Login</a>
+        </div>
+      </section>
+
+      <!-- Right Content: Bigger Cute Robot with Smile -->
+      <aside class="lg:w-2/5 flex justify-center lg:justify-start pt-10">
+        <div class="relative float-animation">
+          <img 
+            src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png" 
+            alt="Cute Robot" 
+            class="w-96 h-96 mx-auto drop-shadow-2xl"
+          >
+          <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 bg-white text-gray-800 px-6 py-3 rounded-full text-lg shadow-md">
+            🤖 Hello, Student!
+          </div>
+        </div>
+      </aside>
+    </main>
+  </body>
+</html>
